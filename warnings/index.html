@@ -40,7 +40,8 @@
 				if (dontShowAgain) {
 					// if the user asked not to be shown again,
 					// save that preference to this browser
-					localStorage.setItem('showWarnings', false );
+					let warningsName = window.location.pathname.replaceAll('/','');
+					localStorage.setItem('showWarnings'+warningsName, false );
 				} else {
 					// if the user wants to be shown warnings again,
 					// load the redirect page with a one-time preference to not show the warnings
