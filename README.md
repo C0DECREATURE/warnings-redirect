@@ -16,7 +16,6 @@ Checking a checkbox input with `id="dont-show-again"` will prevent that warning 
 
 Checking a checkbox input with `id="dont-show-again-ever"` will prevent that warning page from popping up **ever again** on this browser.
 
-
 ### Multiple Warning Pages
 If you want more than one completely separate warning page, make multiple copies of the warnings folder with different names. Edit the warnings-redirect.js file in each of those folders to point to the folder it's in.
 
