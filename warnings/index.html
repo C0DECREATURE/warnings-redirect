@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<form id="accept-warnings">
+			<h1>Warnings</h1>
+			
+			<p>These are the warnings for this website!</p>
+			
+			<!-- checkbox option to not show warnings again -->
+			<div>
+				<input id="dont-show-again" type="checkbox"></input>
+				<label for="dont-show-again">Don't show warnings again.</label>
+			</div>
+			
+			<div>
+				<!-- button to reject the warnings and go back to the homepage -->
+				<button type="button" onclick="window.location='/';">Return Home</button>
+				<!-- button to accept the warnings and redirect the user -->
+				<button type="button" onclick="acceptWarnings();">Accept Warnings</button>
+			<div>
+		</form>
+		
+		<script>
+			// this function is called when the user clicks the button to accept warnings
+			// it saves the "don't show again" setting and redirects the user to the requested page
+			function acceptWarnings() {
+				let form = document.getElementById('warnings-form');
+				// log that user has accepted warnings on this browser
+				console.log(window.location.href);
+				
+				// the URL to redirect the user to after they accept the warnings
+				let urlParams = new URL(window.location.href).searchParams;
+				let redirect = urlParams.has("redirect") ? urlParams.get("redirect") : "/";
+				
+				// check whether to show warnings in the future
+				let dontShowAgain = document.getElementById('dont-show-again').checked;
+				if (dontShowAgain) {
+					// if the user asked not to be shown again,
+					// save that preference to this browser
+					localStorage.setItem('showWarnings', false );
+				} else {
+					// if the user wants to be shown warnings again,
+					// load the redirect page with a one-time preference to not show the warnings
+					redirect += '?showWarnings=false';
+				}
+				
+				// go to the specified redirect page
+				window.location.href = redirect;
+			}
+		</script>
+	</body>
+</html>
