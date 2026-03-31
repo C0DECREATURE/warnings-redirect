@@ -13,6 +13,7 @@
 	if (
 		// if user hasn't asked not to be shown warnings again
 		localStorage.getItem(`showWarnings${warningsName}`) != 'false'
+		&& sessionStorage.getItem(`showWarnings${warningsName}`) != 'false'
 		// AND this page wasn't specifically loaded without warnings
 		&& (!showWarnings || showWarnings != 'false')
 		// AND user is not the Neocities screenshot bot

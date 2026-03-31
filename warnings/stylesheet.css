@@ -1,0 +1,23 @@
+#accept-warnings {
+	text-align: center;
+}
+
+.bottom-buttons button {
+	border: none;
+	padding: .15em .5em;
+	font-size: 1.05em;
+}
+
+button.go-back {
+	background: red;
+}
+button.go-back:hover {
+	background: yellow;
+}
+
+button.accept {
+	background: lime;
+}
+button.accept:hover {
+	background: yellow;
+}

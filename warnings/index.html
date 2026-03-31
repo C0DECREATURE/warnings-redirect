@@ -2,6 +2,11 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		
+		<title>Warnings</title>
+		
+		<!--this page's stylesheet-->
+		<link href="stylesheet.css" rel="stylesheet" type="text/css" media="all">
 	</head>
 	<body>
 		<form id="accept-warnings">
@@ -10,19 +15,24 @@
 			<p>These are the warnings for this website!</p>
 			
 			<!-- checkbox option to not show warnings again -->
-			<div>
-				<input id="dont-show-again" type="checkbox"></input>
-				<label for="dont-show-again">Don't show warnings again.</label>
-			</div>
+			<p>
+				<input id="dont-show-again" type="checkbox" checked></input>
+				<label for="dont-show-again">Don't show this warning again during this session.</label>
+			</p>
 			
-			<div>
+			<!-- checkbox option to not show warnings again -->
+			<p>
+				<input id="dont-show-again-ever" type="checkbox"></input>
+				<label for="dont-show-again-ever">Don't show this warning ever again.</label>
+			</p>
+			
+			<div class="bottom-buttons">
 				<!-- button to reject the warnings and go back to the homepage -->
-				<button type="button" onclick="window.location='/';">Return Home</button>
+				<button class="go-back" type="button" onclick="window.location='/';">Return Home</button>
 				<!-- button to accept the warnings and redirect the user -->
-				<button type="button" onclick="acceptWarnings();">Accept Warnings</button>
+				<button class="accept" type="button" onclick="acceptWarnings();">Accept Warnings</button>
 			<div>
 		</form>
-		
 		<script>
 			// this function is called when the user clicks the button to accept warnings
 			// it saves the "don't show again" setting and redirects the user to the requested page
@@ -36,12 +46,18 @@
 				let redirect = urlParams.has("redirect") ? urlParams.get("redirect") : "/";
 				
 				// check whether to show warnings in the future
-				let dontShowAgain = document.getElementById('dont-show-again').checked;
-				if (dontShowAgain) {
-					// if the user asked not to be shown again,
-					// save that preference to this browser
+				let dontShowAgain = document.getElementById('dont-show-again') ? document.getElementById('dont-show-again').checked : false;
+				let dontShowAgainEver = document.getElementById('dont-show-again-ever') ? document.getElementById('dont-show-again-ever').checked : false;
+				if (dontShowAgainEver) {
+					// if the user asked not to be shown this warnings again EVER,
+					// save that preference to the browser
 					let warningsName = window.location.pathname.replaceAll('/','');
 					localStorage.setItem('showWarnings'+warningsName, false );
+				} else if (dontShowAgain) {
+					// if the user asked not to be shown this warnings again FOR THIS SESSION,
+					// save that preference to the browser
+					let warningsName = window.location.pathname.replaceAll('/','');
+					sessionStorage.setItem('showWarnings'+warningsName, false );
 				} else {
 					// if the user wants to be shown warnings again,
 					// load the redirect page with a one-time preference to not show the warnings
