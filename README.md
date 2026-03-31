@@ -8,13 +8,13 @@ This is a little snippet for a basic Javascript and HTML system to redirect user
 4. On any page you want to show the warnings, include this at the top of the page head: `<script src="/warnings/warnings-redirect.js"></script>` Make sure the src link has the correct path to where you put your folder.
 
 ### Customizing
-You can edit the warnings page as much as you want as long as you keep the script at the end.
+You can edit the warnings page as much as you want. It should work as long as you keep the script at the end.
 
 Call the `acceptWarnings()` function to accept the warnings and redirect the user. In the default setup, this is called by the accept button.
 
-Checking a checkbox input with `id="dont-show-again"` will prevent that warning page from popping up again **during the current browsing session**. Warnings will be shown again if the user closes the window and comes back. You can delete this checkbox if you don't want it.
+Checking a checkbox input with `id="dont-show-again"` will prevent that warning page from popping up again **during the current browsing session**. Warnings will be shown again if the user closes the window and comes back.
 
-Checking a checkbox input with `id="dont-show-again-ever"` will prevent that warning page from popping up **ever again** on this browser. You can delete this checkbox if you don't want it.
+Checking a checkbox input with `id="dont-show-again-ever"` will prevent that warning page from popping up **ever again** on this browser.
 
 
 ### Multiple Warning Pages
