@@ -14,23 +14,30 @@
 			
 			<p>This website contains content. You have been warned.</p>
 			
-			<!-- checkbox option to not show warnings again -->
+			<!-- checkbox option to not show warnings again THIS SESSION -->
+			<!-- you can delete this if you don't want it! -->
 			<p>
 				<input id="dont-show-again" type="checkbox" checked></input>
 				<label for="dont-show-again">Don't show this warning again during this session.</label>
 			</p>
 			
-			<!-- checkbox option to not show warnings again -->
+			<!-- checkbox option to not show warnings again EVER -->
+			<!-- you can delete this if you don't want it! -->
 			<p>
 				<input id="dont-show-again-ever" type="checkbox"></input>
 				<label for="dont-show-again-ever">Don't show this warning ever again.</label>
 			</p>
 			
 			<div class="bottom-buttons">
-				<!-- button to reject the warnings and go back to the homepage -->
+				
+				<!-- button to reject the warnings and go back to the homepage. also okay to delete -->
 				<button class="go-back" type="button" onclick="window.location='/';">Return Home</button>
-				<!-- button to accept the warnings and redirect the user -->
+				
+				<!-- button to accept the warnings and redirect the user. -->
+				<!-- you can edit the text or styling, but if you remove this you'll need
+						 something else on the page to call the acceptWarnings() function. -->
 				<button class="accept" type="button" onclick="acceptWarnings();">Accept Warnings</button>
+				
 			<div>
 		</form>
 		<script>
