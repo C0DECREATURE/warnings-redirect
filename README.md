@@ -4,11 +4,11 @@ This is a little snippet for a basic Javascript and HTML system to redirect user
 ### How to Use
 1. Download the code.
 2. Put the warnings folder anywhere you want on your site.
-3. If you put the folder somewhere other than the root directory, edit the variable "warningsURL" inside the warnings-redirect.js file to point to the path for your warnings folder.
+3. If you put the folder in the root directory, skip this step. Otherwise, edit the variable "warningsURL" inside the warnings-redirect.js file to point to the path for your warnings folder.
 4. On any page you want to show the warnings, include this at the top of the page head: `<script src="/warnings/warnings-redirect.js"></script>` Make sure the src link has the correct path to where you put your folder.
 
 ### Customizing
-You can edit the warnings page as much as you want. It should work as long as you keep the script at the end.
+You can edit the warnings index.html page and stylesheet.css as much as you want. It should work as long as you keep the script at the end of the body of the index.html.
 
 Call the `acceptWarnings()` function to accept the warnings and redirect the user. In the default setup, this is called by the accept button.
 
