@@ -10,7 +10,7 @@ This is a little snippet for a basic Javascript and HTML system to redirect user
 View the risk-page.html file to see a bare-bones example of a page that will show the warnings.
 
 ### Customizing
-You can edit the warnings index.html page and stylesheet.css as much as you want. It should work as long as you keep the script at the end of the body of the index.html.
+Inside the warnings folder, you can edit the index.html page and stylesheet.css as much as you want. It should work as long as you keep the `<script>` section at the end of the html file.
 
 Call the `acceptWarnings()` function to accept the warnings and redirect the user. In the default setup, this is called by the accept button.
 
